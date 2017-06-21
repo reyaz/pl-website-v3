@@ -1,0 +1,9 @@
+{
+  "name": "pulselocker-website",
+  "version": "3.0.0",
+  "description": "Pulselocker Website",
+  "license": "private",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
