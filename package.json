@@ -5,6 +5,7 @@
   "license": "private",
   "scripts": {
     "lint": "standard",
+    "start": "babel-node src/server/main.js",
     "test": "jest --coverage",
     "validate": "npm t && npm run lint"
   },
