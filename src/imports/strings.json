@@ -1,6 +1,7 @@
 {
   "main": {
     "greating": "Hey World.",
-    "listening": "server main listening on port %s"
+    "listening": "server main listening on port %s",
+    "title": "Pulselocker"
   }
 }
