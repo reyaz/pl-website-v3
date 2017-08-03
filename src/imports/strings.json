@@ -1,4 +1,7 @@
 {
+  "reactDemo": {
+    "title": "Pulselocker | React Demo Page"
+  },
   "main": {
     "greating": "Hey World.",
     "listening": "server main listening on port %s",

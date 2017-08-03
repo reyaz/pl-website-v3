@@ -14,6 +14,6 @@ describe('the main template', () => {
     const body = 'Body'
     const page = template({body: body})
 
-    expect(page.indexOf(`<div>${body}</div>`) < 0).toBe(false)
+    expect(page.indexOf(`<div id="root">${body}</div>`) < 0).toBe(false)
   })
 })

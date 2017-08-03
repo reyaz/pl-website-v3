@@ -1,7 +1,10 @@
 var path = require('path')
 
 const clientConfig = {
-  entry: './src/client/main.js',
+  entry: {
+    'react-demo': './src/client/react-demo.js',
+    'main': './src/client/main.js'
+  },
   module: {
     rules: [
       {
@@ -16,7 +19,7 @@ const clientConfig = {
     ]
   },
   output: {
-    filename: 'main.bundle.js',
+    filename: '[name].bundle.js',
     path: path.join(__dirname, 'build/client/')
   },
   target: 'web'
