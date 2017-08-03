@@ -4,19 +4,26 @@
   "description": "Pulselocker Website",
   "license": "private",
   "scripts": {
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "webpack",
+    "build:server": "babel src/server -d build/server --ignore test.js",
     "lint": "standard",
-    "start": "babel-node src/server/main.js",
+    "start": "node build/server/main.js",
     "test": "jest --coverage",
     "validate": "npm t && npm run lint"
   },
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
     "babel-jest": "^20.0.3",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
     "jest": "^20.0.4",
     "pre-commit": "^1.2.2",
-    "standard": "^10.0.2"
+    "standard": "^10.0.2",
+    "webpack": "^3.0.0"
   },
   "jest": {
     "collectCoverageFrom": [
