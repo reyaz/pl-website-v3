@@ -1,7 +1,13 @@
-/* global expect, test */
+/* global describe, it */
 
-import { greating } from './main'
+import request from 'supertest'
 
-test('has a greating', () => {
-  expect(greating).toBe('Hey World. I’m the Server.')
+import app from './main'
+
+describe('GET /', () => {
+  it('should return a 404 status', () => {
+    return request(app)
+      .get('/')
+      .expect(404)
+  })
 })

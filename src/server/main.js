@@ -1,11 +1,16 @@
+import express from 'express'
+
 import strings from '../imports/strings.json'
 
-const introduction = 'I’m the Server.'
-const greating = [strings.main.greating, introduction].join(' ')
+const app = express()
+const port = process.env.PORT || 3000
 
 /* istanbul ignore next */
 if (!module.parent) {
-  console.log(greating)
+  /* istanbul ignore next */
+  app.listen(port, () => {
+    console.log(strings.main.listening, port)
+  })
 }
 
-export { greating }
+export default app

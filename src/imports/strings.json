@@ -1,5 +1,6 @@
 {
   "main": {
-    "greating": "Hey World."
+    "greating": "Hey World.",
+    "listening": "server main listening on port %s"
   }
 }
