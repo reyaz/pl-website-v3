@@ -11,6 +11,8 @@
     "clear:build": "rm -rf build/",
     "clear:coverage": "rm -rf coverage/",
     "clear:modules": "rm -rf node_modules/",
+    "dev:client": "webpack --watch",
+    "dev:server": "nodemon src/server/main.js --exec babel-node",
     "lint": "standard",
     "start": "node build/server/main.js",
     "test": "jest --coverage",
@@ -25,6 +27,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
     "jest": "^20.0.4",
+    "nodemon": "^1.11.0",
     "pre-commit": "^1.2.2",
     "standard": "^10.0.2",
     "webpack": "^3.0.0"
