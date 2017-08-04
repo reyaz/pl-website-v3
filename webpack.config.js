@@ -2,7 +2,6 @@ var path = require('path')
 
 const clientConfig = {
   entry: {
-    'react-demo': './src/client/react-demo.js',
     'main': './src/client/main.js'
   },
   module: {
