@@ -19,7 +19,7 @@ const clientConfig = {
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.join(__dirname, 'build/client/')
+    path: path.join(__dirname, 'build', 'client')
   },
   target: 'web'
 }
