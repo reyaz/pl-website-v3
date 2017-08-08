@@ -4,9 +4,7 @@
   "description": "Pulselocker Website",
   "license": "private",
   "scripts": {
-    "build": "npm run build:client && npm run build:server",
-    "build:client": "webpack",
-    "build:server": "babel src/server -d build/server --ignore test.js",
+    "build": "webpack",
     "clear": "npm run clear:build && npm run clear:coverage && npm run clear:modules",
     "clear:build": "rm -rf build/",
     "clear:coverage": "rm -rf coverage/",
@@ -14,7 +12,7 @@
     "dev:client": "webpack --watch",
     "dev:server": "nodemon src/server/main.js --exec babel-node",
     "lint": "standard",
-    "start": "node build/server/main.js",
+    "start": "node build/server/main.bundle.js",
     "test": "jest --coverage",
     "test:update": "jest --updateSnapshot",
     "validate": "npm t && npm run lint"
@@ -38,7 +36,8 @@
     "react-test-renderer": "^15.6.1",
     "standard": "^10.0.3",
     "supertest": "^3.0.0",
-    "webpack": "^3.4.1"
+    "webpack": "^3.4.1",
+    "webpack-node-externals": "^1.6.0"
   },
   "jest": {
     "collectCoverageFrom": [
