@@ -1,27 +1,32 @@
 import strings from '../imports/strings'
 
-const mainScriptSrc = '/assets/main.bundle.js'
-
-export default ({ body, title, initialState = {}, scriptSrcs = [mainScriptSrc] }) => {
-  const compileScriptTags = (scriptSrcs) => {
-    const mapScriptTags = (src) => {
-      return `<script src="${src}"></script>`
-    }
-
-    return scriptSrcs.map(mapScriptTags).join('\n')
+function compileScriptTags (scriptSrcs) {
+  function mapScriptTags (src) {
+    return `<script src="${src}"></script>`
   }
 
-  return `
+  if (!Array.isArray(scriptSrcs)) {
+    return ''
+  }
+
+  return scriptSrcs.map(mapScriptTags).join('\n')
+}
+
+function removeLeadingSpaces (markup) {
+  return markup.replace(/^ +/gm, '')
+}
+
+function render ({ body, title, scriptSrcs }) {
+  const markup = `
     <!DOCTYPE html>
     <html>
-      <head>
-        <script>window.__APP_INITIAL_STATE__ = ${initialState}</script>
-        <title>${title || strings.main.title}</title>
-      </head>
-      <body>
-        <div id="root">${body}</div>
-        ${compileScriptTags(scriptSrcs)}
-      </body>
-    </html>
+    <meta charset="utf-8"/>
+    <title>${title || strings.main.title}</title>
+    <div id="root">${body || ''}</div>
+    ${compileScriptTags(scriptSrcs)}
   `
+
+  return removeLeadingSpaces(markup)
 }
+
+export default render

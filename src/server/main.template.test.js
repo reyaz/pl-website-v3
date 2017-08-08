@@ -16,4 +16,11 @@ describe('the main template', () => {
 
     expect(page.indexOf(`<div id="root">${body}</div>`) < 0).toBe(false)
   })
+
+  it('should have scriptSrcs', () => {
+    const scriptSrcs = ['/path/to/script.js']
+    const page = template({scriptSrcs: scriptSrcs})
+
+    expect(page.indexOf(`<script src="${scriptSrcs[0]}"></script>`) < 0).toBe(false)
+  })
 })
