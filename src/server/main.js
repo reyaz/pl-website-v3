@@ -1,5 +1,5 @@
-import path from 'path'
 import express from 'express'
+import path from 'path'
 
 import strings from '../imports/strings.json'
 
