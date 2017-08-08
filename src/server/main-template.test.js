@@ -1,6 +1,6 @@
 /* global describe, expect, it */
 
-import template from './main.template'
+import template from './main-template'
 
 describe('the main template', () => {
   it('should have a title', () => {
