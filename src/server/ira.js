@@ -44,6 +44,7 @@ export default (app) => {
 
     const page = template({
       body: body,
+      scriptSrcs: ['/assets/ira.bundle.js'],
       title: getTitle(req)
     })
 

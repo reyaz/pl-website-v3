@@ -3,6 +3,7 @@ var path = require('path')
 
 const clientConfig = {
   entry: {
+    'ira': './src/client/ira.js',
     'main': './src/client/main.js'
   },
   module: {
