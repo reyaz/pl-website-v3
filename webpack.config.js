@@ -8,7 +8,7 @@ const clientConfig = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -22,6 +22,9 @@ const clientConfig = {
     filename: '[name].bundle.js',
     path: path.join(__dirname, 'build', 'client')
   },
+  resolve: {
+    extensions: ['.jsx', '.js', '.json']
+  },
   target: 'web'
 }
 
@@ -33,7 +36,7 @@ const serverConfig = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -51,6 +54,9 @@ const serverConfig = {
   output: {
     filename: '[name].bundle.js',
     path: path.join(__dirname, 'build', 'server')
+  },
+  resolve: {
+    extensions: ['.jsx', '.js', '.json']
   },
   target: 'node'
 }

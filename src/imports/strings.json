@@ -1,4 +1,22 @@
 {
+  "ira": {
+    "index": {
+      "heading": "IRA",
+      "title": "Pulselocker | IRA"
+    },
+    "login": {
+      "heading": "IRA: Login",
+      "title": "Pulselocker | IRA: Login"
+    },
+    "signup": {
+      "heading": "IRA: Signup",
+      "title": "Pulselocker | IRA: Signup"
+    },
+    "success": {
+      "heading": "You did a thing!",
+      "title": "Pulselocker | IRA: Success"
+    }
+  },
   "main": {
     "greating": "Hey World.",
     "listening": "server main listening on port %s",
