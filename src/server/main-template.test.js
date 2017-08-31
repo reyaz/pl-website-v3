@@ -1,6 +1,6 @@
 /* global describe, expect, it */
 
-import template from './main.template'
+import template from './main-template'
 
 describe('the main template', () => {
   it('should have a title', () => {
@@ -15,5 +15,12 @@ describe('the main template', () => {
     const page = template({body: body})
 
     expect(page.indexOf(`<div id="root">${body}</div>`) < 0).toBe(false)
+  })
+
+  it('should have scriptSrcs', () => {
+    const scriptSrcs = ['/path/to/script.js']
+    const page = template({scriptSrcs: scriptSrcs})
+
+    expect(page.indexOf(`<script src="${scriptSrcs[0]}"></script>`) < 0).toBe(false)
   })
 })
